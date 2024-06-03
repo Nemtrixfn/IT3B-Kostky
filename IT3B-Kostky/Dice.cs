@@ -13,7 +13,7 @@ namespace IT3B_Kostky
     public class Dice
     {
         private Grid _grid;
-        private int _currentValue;
+        public int CurrentValue { get; private set; }
 
 
         public Dice(Grid grid)
@@ -82,8 +82,8 @@ namespace IT3B_Kostky
 
         public void Roll(Random random)
         {
-            _currentValue = random.Next(1, 7);
-            ShowFace(_currentValue);
+            CurrentValue = random.Next(1, 7);
+            ShowFace(CurrentValue);
         }
 
         private void ShowFace(int value)

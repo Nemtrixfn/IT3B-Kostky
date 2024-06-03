@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,11 +21,16 @@ namespace IT3B_Kostky
 
         private Random _random;
         private Dice[] _diceArray;
+        private List<string> _history;
+        private string _filePath = "dice_roll_history.txt";
+
+
 
         public MainWindow()
         {
             InitializeComponent();
             _random = new Random();
+            _history = new List<string>();
 
             _diceArray = new Dice[6];
             _diceArray[0] = new Dice(diceGrid1);
@@ -36,9 +43,38 @@ namespace IT3B_Kostky
 
         private void RollButton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var dice in _diceArray)
+            int[] results = new int[6];
+            for (int i = 0; i < _diceArray.Length; i++)
             {
-                dice.Roll(_random);
+                _diceArray[i].Roll(_random);
+                results[i] = _diceArray[i].CurrentValue;
+            }
+            AddToHistory(results);
+            SaveHistoryToFile();
+        }
+
+        private void AddToHistory(int[] results)
+        {
+            string resultString = string.Join(", ", results);
+            _history.Add(resultString);
+            historyListBox.Items.Add(resultString);
+        }
+
+        private void SaveHistoryToFile()
+        {
+            File.WriteAllLines(_filePath, _history);
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                FileName = "dice_roll_history.txt",
+                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
+            };
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                File.Copy(_filePath, saveFileDialog.FileName, true);
             }
         }
     }

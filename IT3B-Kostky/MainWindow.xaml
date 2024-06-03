@@ -7,14 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Name="rollButton" Content="Roll Dice" Width="100" Height="50" VerticalAlignment="Top" Margin="10" Click="RollButton_Click"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid Name="diceGrid1" Width="100" Height="100"/>
-            <Grid Name="diceGrid2" Width="100" Height="100"/>
-            <Grid Name="diceGrid3" Width="100" Height="100"/>
-            <Grid Name="diceGrid4" Width="100" Height="100"/>
-            <Grid Name="diceGrid5" Width="100" Height="100"/>
-            <Grid Name="diceGrid6" Width="100" Height="100"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="rollButton" Content="Roll Dice" Width="100" Height="50" Click="RollButton_Click"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border BorderBrush="Black" BorderThickness="2" Padding="5" Margin="5">
+                    <Grid Name="diceGrid1" Width="100" Height="100"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" Padding="5" Margin="5">
+                    <Grid Name="diceGrid2" Width="100" Height="100"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" Padding="5" Margin="5">
+                    <Grid Name="diceGrid3" Width="100" Height="100"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" Padding="5" Margin="5">
+                    <Grid Name="diceGrid4" Width="100" Height="100"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" Padding="5" Margin="5">
+                    <Grid Name="diceGrid5" Width="100" Height="100"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" Padding="5" Margin="5">
+                    <Grid Name="diceGrid6" Width="100" Height="100"/>
+                </Border>
+            </StackPanel>
+            <ListBox Name="historyListBox" Width="400" Height="200"/>
+            <Button Name="saveButton" Content="Save History" Width="100" Height="50" Click="SaveButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>
