@@ -7,6 +7,43 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button Name="rollButton" Content="Roll Dice" Width="100" Height="50" VerticalAlignment="Top" Margin="10" Click="RollButton_Click"/>
+        <Grid Name="diceGrid" Width="200" Height="200" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid Name="dice1" Visibility="Collapsed">
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+            <Grid Name="dice2" Visibility="Collapsed">
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+            </Grid>
+            <Grid Name="dice3" Visibility="Collapsed">
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+            </Grid>
+            <Grid Name="dice4" Visibility="Collapsed">
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+            </Grid>
+            <Grid Name="dice5" Visibility="Collapsed">
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+            </Grid>
+            <Grid Name="dice6" Visibility="Collapsed">
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10"/>
+                <Ellipse Fill="Black" Width="20" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10"/>
+            </Grid>
+        </Grid>
+        <TextBlock Name="resultText" FontSize="36" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30"/>
 
     </Grid>
 </Window>
